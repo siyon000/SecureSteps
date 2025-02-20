@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Checklist from './pages/Checklist';
@@ -36,7 +36,7 @@ function App() {
               <Route path="/checklist" element={<Checklist />} />
               <Route path="/quiz" element={<Quiz />} />
               {/* ✅ Redirect unmatched routes to Home */}
-              <Route path="*" element={<Home />} />
+              <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </main>
         </div>
