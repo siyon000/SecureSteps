@@ -167,11 +167,11 @@ export function Checklist() {
             </div>
 
             <div className="mt-6">
-                <div className="flex">
+                <div className="flex flex-wrap gap-2">
                     <input
                         type="text"
-                        className={`flex-1 p-3 border rounded-l outline-none
-                            ${isDark ? 'bg-gray-700 text-gray-100 border-gray-600' : 'bg-white text-gray-900 border-gray-300'}`}
+                        className={`flex-1 p-3 border rounded-lg outline-none
+                ${isDark ? 'bg-gray-700 text-gray-100 border-gray-600' : 'bg-white text-gray-900 border-gray-300'}`}
                         placeholder="Enter a new cybersecurity task"
                         value={newTask}
                         onChange={(e) => setNewTask(e.target.value)}
@@ -183,11 +183,12 @@ export function Checklist() {
                     />
                     <button
                         onClick={handleAddTask}
-                        className="px-4 py-2 bg-indigo-500 text-white rounded-r hover:bg-indigo-600 transition-colors flex items-center gap-2"
+                        className="px-4 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-600 transition-colors flex items-center gap-2 sm:w-auto w-full justify-center"
                     >
                         <Plus className="w-4 h-4" /> Add
                     </button>
                 </div>
+
 
                 <button
                     onClick={handleReset}
