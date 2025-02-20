@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Checklist from './pages/Checklist';
@@ -24,26 +24,25 @@ function App() {
   }, [isDark]);
 
   return (
-    <BrowserRouter basename="/SecureSteps">
-      <ThemeContext.Provider value={{ isDark, setIsDark }}>
-        {/* ✅ Set correct basename for GitHub Pages */}
-
-        <div className={`min-h-screen flex flex-col transition-colors duration-300 
+    <ThemeContext.Provider value={{ isDark, setIsDark }}>
+      {/* ✅ Fix GitHub Pages route issue */}
+      <Router basename="/SecureSteps">
+        <div className={`min-h-screen transition-colors duration-300 
           ${isDark ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}`}>
           <Navbar />
-          <main className="container mx-auto px-4 py-8 pt-20 flex-grow"> {/* ✅ Prevents navbar overlap */}
+          <main className="container mx-auto px-4 py-8">
             <Routes>
+              {/* ✅ Ensure the homepage works */}
               <Route path="/" element={<Home />} />
               <Route path="/checklist" element={<Checklist />} />
               <Route path="/quiz" element={<Quiz />} />
-              {/* ✅ Redirect unmatched routes to Home */}
+              {/* ✅ Redirect any unknown paths to Home */}
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </main>
         </div>
-
-      </ThemeContext.Provider>
-    </BrowserRouter>
+      </Router>
+    </ThemeContext.Provider>
   );
 }
 
