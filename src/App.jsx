@@ -24,9 +24,10 @@ function App() {
   }, [isDark]);
 
   return (
-    <ThemeContext.Provider value={{ isDark, setIsDark }}>
-      {/* ✅ Set correct basename for GitHub Pages */}
-      <BrowserRouter basename="/SecureSteps">
+    <BrowserRouter basename="/SecureSteps">
+      <ThemeContext.Provider value={{ isDark, setIsDark }}>
+        {/* ✅ Set correct basename for GitHub Pages */}
+
         <div className={`min-h-screen flex flex-col transition-colors duration-300 
           ${isDark ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}`}>
           <Navbar />
@@ -40,8 +41,9 @@ function App() {
             </Routes>
           </main>
         </div>
-      </BrowserRouter>
-    </ThemeContext.Provider>
+
+      </ThemeContext.Provider>
+    </BrowserRouter>
   );
 }
 
