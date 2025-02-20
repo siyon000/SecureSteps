@@ -13,6 +13,6 @@ It features:
     🌙 Dark Mode for better UX
     ⚡ Fast and responsive design
 
-📸 Screenshots
+📸 Screenshot
 
 ![image](https://github.com/user-attachments/assets/e7b0bccd-abb9-4f71-8228-e0a7b8700c17)
