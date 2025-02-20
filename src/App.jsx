@@ -25,18 +25,15 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ isDark, setIsDark }}>
-      {/* ✅ Fix GitHub Pages route issue */}
       <Router basename="/SecureSteps">
         <div className={`min-h-screen transition-colors duration-300 
           ${isDark ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}`}>
           <Navbar />
           <main className="container mx-auto px-4 py-8">
             <Routes>
-              {/* ✅ Ensure the homepage works */}
-              <Route path="/" element={<Home />} />
+              <Route exact path="/" element={<Home />} />
               <Route path="/checklist" element={<Checklist />} />
               <Route path="/quiz" element={<Quiz />} />
-              {/* ✅ Redirect any unknown paths to Home */}
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </main>

@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { Logo } from './Logo';
 import DarkModeToggle from './DarkModeToggle';
 
-export function Navbar() {
+function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
@@ -72,3 +72,4 @@ function MobileNavLink({ to, children, onClick }) {
         </Link>
     );
 }
+export default Navbar;

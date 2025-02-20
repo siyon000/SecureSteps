@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { Shield, Lock, RefreshCw, AlertTriangle } from 'lucide-react';
 
-export function Home() {
+function Home() {
     const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
