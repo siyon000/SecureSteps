@@ -31,10 +31,10 @@ function App() {
           <Navbar />
           <main className="container mx-auto px-4 py-8">
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/checklist" element={<Checklist />} />
-              <Route path="/quiz" element={<Quiz />} />
-              <Route path="*" element={<Navigate to="/" />} />
+              <Route index element={<Home />} />
+              <Route path="checklist" element={<Checklist />} />
+              <Route path="quiz" element={<Quiz />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
         </div>
